@@ -12,21 +12,24 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var obrazek = findViewById<ImageView>(R.id.imageView);
-        var buton = findViewById<Button>(R.id.button);
-        var napis = findViewById<TextView>(R.id.tekst);
+        val obrazek = findViewById<ImageView>(R.id.img)
+        val buton = findViewById<Button>(R.id.button)
+        val napis = findViewById<TextView>(R.id.tekst)
 
-        var ukryte = false;
+
+        var ukryte = false
 
         buton.setOnClickListener {
             if(ukryte) {
-                obrazek.isVisible = true;
+                obrazek.isVisible = true
                 napis.isVisible = true
+                buton.text = "Ukryj"
                 ukryte = false
             } else{
-                obrazek.isVisible = false;
-                napis.isVisible = false;
-                ukryte = true;
+                obrazek.isVisible = false
+                napis.isVisible = false
+                buton.text = "Pokaż"
+                ukryte = true
             }
         }
     }
